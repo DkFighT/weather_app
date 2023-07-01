@@ -14,6 +14,11 @@ btn.onclick = () => {
         let url = `https://api.openweathermap.org/data/2.5/forecast?q=${search.value}&appid=${API_KEY}`;
         getRequest(url).then(data => {
             if (data['cod'] !== '200') {
+                try {
+                    document.getElementById('info').remove()
+                } catch (error) {
+                    console.log('deleted');
+                }
                 container.insertAdjacentHTML('beforeend', `<div class="info"><div class="tempreture"><div class="temp" id="temp">Invalid <br>City</div></div></div>`)
             }
             else {
