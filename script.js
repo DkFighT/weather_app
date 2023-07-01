@@ -18,6 +18,7 @@ btn.onclick = () => {
             }
             else {
                 container.lastChild.remove()
+                search.value = search.value + `, ${data['city']['country']}`;
                 container.insertAdjacentHTML('beforeend', `
                 <div class="info" id="info">
                     <div class="tempreture">
