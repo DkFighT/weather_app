@@ -9,11 +9,16 @@
 }
 :root {
     --radius: 10px;
-    --bg_color: #1d3557;
-    --sec_color: #457b9d;
-    --color: #f1faee;
-    --placeholder: #a8afa6;
+    --bg_color: #f4a261;
+    --sec_color: #e76f51;
+    --color: #fefae0;
+    --th_color: #264653;
+    --placeholder: #bde0fe;
     --height: 40vmin;
+}
+body{
+    background: rgb(201,0,255);
+    background: linear-gradient(38deg, rgba(201,0,255,1) 0%, rgba(102,0,255,1) 100%);
 }
 .container {
     width: 100%;
@@ -27,13 +32,14 @@
     height: 100px;
     width: var(--height);
     border-radius: var(--radius);
-    background-color: var(--bg_color);
+    background-color: var(--sec_color);
     padding: 0px 10px 0px 10px;
     display: flex;
     flex-direction: column;
     transition: all .2s ease-in-out;
     gap: var(--radius);
     overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
 }
 form {
     height: 100px;
@@ -73,7 +79,7 @@ button {
     transition: all .1s ease-in-out;
 }
 button:hover {
-    background-color: var(--sec_color);
+    background-color: var(--bg_color);
 }
 .info {
     height: 350px;
@@ -89,6 +95,9 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--bg_color);
+    border-radius: var(--radius);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
 }
 .temp {
     font-size: 50px;
@@ -125,10 +134,10 @@ button:hover {
     min-height: var(--height);
     max-height: var(--height);
     scroll-behavior: smooth;
-    /* transform: rotate(-90deg); */
     transform-origin: top right;
     overflow-y: auto;
     overflow-x: hidden;
+
 }
 .time_weather::-webkit-scrollbar{
     display: none;
@@ -145,10 +154,15 @@ button:hover {
     gap: 5px;
     transform: rotate(90deg) translateY(-20px);
     margin-bottom: -30px;
+    background-color: var(--bg_color);
+    border-radius: var(--radius);
 }
 .temp_min_ico {
     height: 40px;
     width: 40px;
+}
+.temp_min_time{
+    color: var(--th_color);
 }
 
 @media screen and (max-width: 800px){

@@ -69,17 +69,17 @@ btn.onclick = () => {
                         <div class="block">
                             <div class="temp_min_time">Now</div>
                             <img src="https://openweathermap.org/img/wn/${data['list'][0]['weather'][0]['icon']}@2x.png" alt="" class="temp_min_ico">
-                            <div class="temp_min_temp">${parseInt(data['list'][0]['main']["temp"]) - 273}°C</div>
+                            <div class="temp_min_time">${parseInt(data['list'][0]['main']["temp"]) - 273}°C</div>
                         </div>
                     </div>
                 </div>`)
                 let time_weather = document.getElementById('time_weather');
-                time_weather.style.transform = `rotate(-90deg) translateY(-${(time_weather.clientHeight) / 2 + 50}px)`;
+                time_weather.style.transform = `rotate(-90deg) translateY(-${(time_weather.clientHeight) / 2 + 45}px)`;
                 for (let i = 1; i < data['list'].length; i++){
                     time_weather.insertAdjacentHTML('beforeend', `<div class="block">
                     <div class="temp_min_time">${((data['list'][i]['dt_txt']).split(' '))[1].replace(':00','')}</div>
                     <img src="https://openweathermap.org/img/wn/${data['list'][i]['weather'][0]['icon']}@2x.png" alt="" class="temp_min_ico">
-                    <div class="temp_min_temp">${parseInt(data['list'][i]['main']["temp"]) - 273}°C</div>
+                    <div class="temp_min_time">${parseInt(data['list'][i]['main']["temp"]) - 273}°C</div>
                 </div>`)
                 }
             }
